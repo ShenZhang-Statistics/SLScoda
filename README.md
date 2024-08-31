@@ -1,11 +1,8 @@
+
 # SLScoda Description Document
 
-This is a description document to introduce the usage for SLScoda based on a paper titled "Sparse Laplacian Shrinkage for High-dimensional Regression with Correlated Compositional Data" (Zhang et al. 2024+). 
-We first generalize the sparse Laplacian shrinkage
-(SLS; Huang et al. 2011) method to compositional data and propose a new method, SLScoda, to address variable selection in high-dimensional linear log-contrast model with correlated compositional data. 
-SLScoda can simultaneously consider the compositional effect,
-the high dimensionality, and the component correlation of compositional data. SLScoda outperforms its competitor in terms of prediction error, estimation accuracy, and variable selection. 
-The related R code and the example are summarized in a single folder SLScodaRcode. Please set this folder as the working directory.
+This is a description document to introduce the usage for SLScoda based on a paper titled "High-dimensional Linear Regression with Correlated Compositional Covariates" (Zhang et al. 2024+). 
+We propose a sparse Laplacian shrinkage method with a zero-sum constraint, called SLScoda, to select variables in the high-dimensional linear regression model with correlated compositional covariates. SLScoda addresses the constant-sum constraint challenge by a linear log-contrast model and adopts the Laplacian shrinkage with a sparse penalty for selecting correlated covariates in the linear regression model. The related R code and the example are summarized in a single folder SLScodaRcode. Please set this folder as the working directory.
 
  
 ## 1 SLScoda function 
@@ -13,7 +10,8 @@ The related R code and the example are summarized in a single folder SLScodaRcod
 There are the main function of SLScoda method in **SLScoda.R**.
 
 ```{r , eval=FALSE}
-SLScoda(X,Z,y,lamb.ls=NULL,nlamb=20, beta0=NULL, penalty="MCP", gam.para=3, A.type="N.1", A=NULL)
+SLScoda(X,Z,y,lambda_ls=NULL,nlambda=20,beta0=NULL, 
+        penalty="MCP", gamma_para=3, A_type="A1",A=NULL)
 ```
 
 **Input parameter**
@@ -25,20 +23,20 @@ SLScoda(X,Z,y,lamb.ls=NULL,nlamb=20, beta0=NULL, penalty="MCP", gam.para=3, A.ty
   - log(X)
 * y    
   - Response data
-* lamb.ls
+* lambda_ls
   - The list of Lambda: one is the vector of lambda_1, and the other is the vector of lambda_2.
-* nlamb  
-  - If lamb.ls is null, nlamb is the number of lamdata generated.
+* nlambda  
+  - If lambda_ls is null, lambda_ls is the number of lamdata generated.
 * beta0
   - Initial estimation for regression coefficients.
 * penalty
   - Penalty function: "MCP" or "SCAD".
-* gam.para
+* gamma_para
   - Regularization parameter $\gamma$: if the penalty function is "MCP", $\gamma=3$; if the penalty function is "SCAD", $\gamma=3.27$.
-* A.type
+* A_type
   - The type of constructing a adjacency matrix: 
-  - "N.1": Pearson’s correlation.
-  - "N.2": Sparcc (Friedman and Alm, 2012).
+  - "A1": Pearson’s correlation.
+  - "A2": Sparcc (Friedman and Alm, 2012).
 * A
   - Adjacency matrix. 
 
@@ -88,13 +86,13 @@ y <- Z %*% beta + eps  #  response data
 
 Call ``SLScoda`` function in **SLScoda.R**.
 ```{r , eval=FALSE}
-res.est <- SLScoda(X,Z,y,lamb.ls=NULL, nlamb=20, penalty="MCP", gam.para=3, A.type="N.1", A=NULL);
+res.est <- SLScoda(X=X,Z=Z,y=y,lambda_ls=NULL,nlambda=20,beta0=NULL, 
+                   penalty="MCP", gamma_para=3, A_type="A1",A=NULL);
 res.est$beta[1:10]
 ```
 
 # 3 Reference
 
-* Zhang, S. et al. (2024+), "Sparse Laplacian Shrinkage for High-dimensional
-Regression with Correlated Compositional Data",  *Submit to journal*.
+* Zhang, S. et al. (2024+), "High-dimensional Linear Regression with Correlated Compositional Covariates",  *Submit to journal*.
 * Huang, J., Ma, S., Li, H. and Zhang, C.-H. (2011). The sparse Laplacian shrinkage estimator for high-dimensianl regression, The Annals of Statistics 39(4): 2021–2046.
 * Friedman, J., and Alm, E. J. (2012), "Inferring correlation networks from genomic survey data", *PLOS Computational Biology*, 8(9), e1002687.
