@@ -93,6 +93,6 @@ res.est$beta[1:10]
 
 # 3 Reference
 
-* Zhang, S. et al. (2024+), "High-dimensional Linear Regression with Correlated Compositional Covariates",  *Submit to journal*.
+* Zhang, S., Fang H., Hu T. and Tong T. (2024+), "High-dimensional Linear Regression with Correlated Compositional Covariates",  *Submit to journal*.
 * Huang, J., Ma, S., Li, H. and Zhang, C.-H. (2011). The sparse Laplacian shrinkage estimator for high-dimensianl regression, The Annals of Statistics 39(4): 2021–2046.
 * Friedman, J., and Alm, E. J. (2012), "Inferring correlation networks from genomic survey data", *PLOS Computational Biology*, 8(9), e1002687.
