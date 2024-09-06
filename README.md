@@ -42,12 +42,14 @@ SLScoda(X,Z,y,lambda_ls=NULL,nlambda=20,beta0=NULL,
 
 **Output result**
 
-* beta       
-  - Estimation for regression coefficients
-* lambda1_vec, lambda2_vec      
-  - the vectors of lambda_1 and lambda_2
-* lambda_opt       
-  - Optimal lambda1 and lambda2.
+* opt_res
+   - The list of results
+   - beta       
+     - Estimation for regression coefficients.
+   - lambda1_vec, lambda2_vec      
+     - The vectors of lambda_1 and lambda_2.
+   - lambda_opt       
+     - Optimal lambda1 and lambda2.
 
 # 2 Example 
 
