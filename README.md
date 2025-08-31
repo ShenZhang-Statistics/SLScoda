@@ -1,8 +1,8 @@
 
 # SLScoda Description Document
 
-This is a description document to introduce the usage for SLScoda based on a paper titled "High-dimensional Linear Regression with Correlated Compositional Covariates" (Zhang et al. 2024+). 
-We propose a sparse Laplacian shrinkage method with a zero-sum constraint, called SLScoda, to select variables in the high-dimensional linear regression model with correlated compositional covariates. SLScoda addresses the constant-sum constraint challenge by a linear log-contrast model and adopts the Laplacian shrinkage with a sparse penalty for selecting correlated covariates in the linear regression model. The related R code and the example are summarized in a single folder SLScodaRcode. Please set this folder as the working directory.
+This is a description document to introduce the usage for SLScoda based on a paper titled "High-dimensional Linear Regression with Correlated Compositional Covariates" (Zhang et al. 2025+). 
+We introduce a sparse Laplacian shrinkage method with a zero-sum constraint, called SLScoda, to select variables in the high-dimensional linear regression model with correlated compositional covariates. SLScoda addresses the constant-sum constraint challenge using a linear log-contrast model and adopts the Laplacian shrinkage with a sparse penalty for selecting correlated covariates in the linear model. The related R code and the example are summarized in a single folder SLScodaRcode. Please set this folder as the working directory.
 
  
 ## 1 SLScoda function 
@@ -95,6 +95,6 @@ res.est$beta[1:10]
 
 # 3 Reference
 
-* Zhang, S., Fang, H., Hu, T. and Tong, T. (2024+), "High-dimensional Linear Regression with Correlated Compositional Covariates".
+* Zhang, S., Fang, H., Hu, T. and Tong, T. (2025+), "High-dimensional Linear Regression with Correlated Compositional Covariates".
 * Huang, J., Ma, S., Li, H. and Zhang, C.-H. (2011). The sparse Laplacian shrinkage estimator for high-dimensianl regression, The Annals of Statistics 39(4): 2021–2046.
 * Friedman, J., and Alm, E. J. (2012), "Inferring correlation networks from genomic survey data", *PLOS Computational Biology*, 8(9), e1002687.
