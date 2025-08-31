@@ -57,7 +57,7 @@ There is a simple example for using the SLScoda function in **SLScoda.R**. First
 
 ```{r , eval=FALSE}
 library(Rcpp)
-sourceCpp("SLScodaRcode/SLScoda.cfunc.cpp")
+sourceCpp("SLScodaRcode/SLScoda_lambda2.cpp")
 source("SLScodaRcode/SLScoda.R")
 source("SLScodaRcode/sparcc.modify.R")
 ```
